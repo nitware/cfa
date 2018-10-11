@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6DCD6AF-004B-40C3-A179-A2F6B75B3C36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFA.Service</RootNamespace>
+    <AssemblyName>CFA.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CryptoService.cs" />
+    <Compile Include="DiscountCalculatorFactory.cs" />
+    <Compile Include="Interfaces\IDiscountCalculatorFactory.cs" />
+    <Compile Include="Interfaces\IInvoiceManager.cs" />
+    <Compile Include="InvoiceManager.cs" />
+    <Compile Include="NoDiscountCalculator.cs" />
+    <Compile Include="Extentions\EsnecilExtensions.cs" />
+    <Compile Include="Extentions\IRepositoryExtensions.cs" />
+    <Compile Include="Interfaces\ICryptoService.cs" />
+    <Compile Include="Interfaces\IDiscountCalculator.cs" />
+    <Compile Include="Interfaces\IMembershipService.cs" />
+    <Compile Include="Interfaces\IOrderService.cs" />
+    <Compile Include="Interfaces\IOrderTotalProvider.cs" />
+    <Compile Include="Interfaces\IProductPriceService.cs" />
+    <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="MembershipService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="OrderTotalProvider.cs" />
+    <Compile Include="ProductPriceService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CFA.Generator\CFA.Generator.csproj">
+      <Project>{93A3E0C8-7C58-4AB6-98AD-A5AC2E2EFE8F}</Project>
+      <Name>CFA.Generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CFA.Infrastructure\CFA.Infrastructure.csproj">
+      <Project>{de3d7cd7-f20b-41f1-92f9-de4e2f180fb6}</Project>
+      <Name>CFA.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\CFA.Domain\CFA.Domain.csproj">
+      <Project>{6e31ca72-4ac8-4f60-907a-cb98e4f5b663}</Project>
+      <Name>CFA.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC9FD6A2-2640-4D0C-B789-F9BF37100D19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFA.Data</RootNamespace>
+    <AssemblyName>CFA.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\CFAContext.cs" />
+    <Compile Include="Core\Migrations\201806041504445_init-1.cs" />
+    <Compile Include="Core\Migrations\201806041504445_init-1.Designer.cs">
+      <DependentUpon>201806041504445_init-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\201806070801355_init-2.cs" />
+    <Compile Include="Core\Migrations\201806070801355_init-2.Designer.cs">
+      <DependentUpon>201806070801355_init-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\201806111107522_init-3.cs" />
+    <Compile Include="Core\Migrations\201806111107522_init-3.Designer.cs">
+      <DependentUpon>201806111107522_init-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\201806111726379_init-4.cs" />
+    <Compile Include="Core\Migrations\201806111726379_init-4.Designer.cs">
+      <DependentUpon>201806111726379_init-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\201806111734402_init-5.cs" />
+    <Compile Include="Core\Migrations\201806111734402_init-5.Designer.cs">
+      <DependentUpon>201806111734402_init-5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\201806181456123_init-6.cs" />
+    <Compile Include="Core\Migrations\201806181456123_init-6.Designer.cs">
+      <DependentUpon>201806181456123_init-6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\201806181518055_init-7.cs" />
+    <Compile Include="Core\Migrations\201806181518055_init-7.Designer.cs">
+      <DependentUpon>201806181518055_init-7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Migrations\Configuration.cs" />
+    <Compile Include="Mapping\ActionMap.cs" />
+    <Compile Include="Mapping\ControllerActionMap.cs" />
+    <Compile Include="Mapping\ControllerMap.cs" />
+    <Compile Include="Mapping\CurrentProductPriceMap.cs" />
+    <Compile Include="Mapping\DownloadMap.cs" />
+    <Compile Include="Mapping\PaymentPaystackMap.cs" />
+    <Compile Include="Mapping\ProductMap.cs" />
+    <Compile Include="Mapping\ProductPriceMap.cs" />
+    <Compile Include="Mapping\ProductTypeMap.cs" />
+    <Compile Include="Mapping\RightMap.cs" />
+    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\PaymentChannelMap.cs" />
+    <Compile Include="Mapping\OrderMap.cs" />
+    <Compile Include="Mapping\EsnecilMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="Setup\DataSeeder.cs" />
+    <Compile Include="Setup\Seed.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CFA.Infrastructure\CFA.Infrastructure.csproj">
+      <Project>{de3d7cd7-f20b-41f1-92f9-de4e2f180fb6}</Project>
+      <Name>CFA.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CFA.Service\CFA.Service.csproj">
+      <Project>{F6DCD6AF-004B-40C3-A179-A2F6B75B3C36}</Project>
+      <Name>CFA.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\CFA.Domain\CFA.Domain.csproj">
+      <Project>{6e31ca72-4ac8-4f60-907a-cb98e4f5b663}</Project>
+      <Name>CFA.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Core\Migrations\201806041504445_init-1.resx">
+      <DependentUpon>201806041504445_init-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Migrations\201806070801355_init-2.resx">
+      <DependentUpon>201806070801355_init-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Migrations\201806111107522_init-3.resx">
+      <DependentUpon>201806111107522_init-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Migrations\201806111726379_init-4.resx">
+      <DependentUpon>201806111726379_init-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Migrations\201806111734402_init-5.resx">
+      <DependentUpon>201806111734402_init-5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Migrations\201806181456123_init-6.resx">
+      <DependentUpon>201806181456123_init-6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\Migrations\201806181518055_init-7.resx">
+      <DependentUpon>201806181518055_init-7.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
